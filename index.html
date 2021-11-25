@@ -2,6 +2,15 @@
     <head>
         <title>Hello World!</title>
         <link rel="stylesheet" href="testsite.css">
+		<script>
+			function testFunct() {
+				document.getElementById("test").innerHTML = this.responseText;
+			}
+			var oReq = new XMLHttpRequest();
+			oReq.addEventListener("load", testFunct);
+			oReq.open("GET", "http://24.192.226.100:25565/HomieChan/post");
+			oReq.send();
+		</script>
     </head>
     <body>
         <h1>
@@ -16,5 +25,6 @@
         <p>
             Hello everyone, this is simply a test of the website feature offered by Github! This will let me test out features and changes as I'm getting used to website development, including testing the same site on multiple devices without paying for a domain!
         </p>
+	<p id="test"></p>
     </body>
 </html>
